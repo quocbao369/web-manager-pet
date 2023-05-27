@@ -33,7 +33,7 @@ import { TablePetComponent } from './Component/table-pet/table-pet.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator'; // Thêm dòng này
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import { LoginModule } from './login/login.module';
 
 
 @NgModule({
@@ -69,7 +69,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCheckboxModule,
     MatTableModule,
     MatPaginatorModule,
-    MatGridListModule
+    MatGridListModule,
+    LoginModule
     
     
   ],

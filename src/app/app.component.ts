@@ -11,15 +11,18 @@ export class AppComponent {
   @ViewChild(MatSidenav)'sidenav':MatSidenav;
   value = '';
   public isOpened = false;
+  isLoggedIn: boolean = true;
 
   public openLeftSide(){
     this.isOpened = !this.isOpened;
     this.sidenav.toggle();
     console.log('menu');
   }
+  
   public closeLeftSide(){
     this.isOpened = false;
   }
+
   public input(){
     alert("hello "+this.value);
   }

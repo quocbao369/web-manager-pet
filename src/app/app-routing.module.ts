@@ -9,7 +9,7 @@ import { TablePetComponent } from './Component/table-pet/table-pet.component';
 import { LoginComponent } from './user/login/login.component';
 
 const routes: Routes = [
-  { path:'',redirectTo:'Component/list-pets', pathMatch:'full'},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path:'Component/pets', component: PetsComponent},
   { path:'Component/list-pets', component: ListPetsComponent},
   { path:'Component/create-pets', component: CreatePetsComponent},

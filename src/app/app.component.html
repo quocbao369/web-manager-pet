@@ -1,3 +1,5 @@
+<app-login *ngIf="!isLoggedIn"></app-login>
+<div *ngIf="isLoggedIn">
 <mat-toolbar color="warn"  class="nav-height">
   <mat-toolbar-row>
     <span class="container">
@@ -120,4 +122,4 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-<app-login></app-login>
+</div>
