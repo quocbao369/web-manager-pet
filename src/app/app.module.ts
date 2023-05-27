@@ -34,6 +34,7 @@ import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator'; // Thêm dòng này
 import {MatGridListModule} from '@angular/material/grid-list';
 import { LoginModule } from './login/login.module';
+import { RegisterComponent } from './user/register/register.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { LoginModule } from './login/login.module';
     FavoritePetsComponent,
     LoginComponent,
     DetailPetComponent,
-    TablePetComponent
+    TablePetComponent,
+    RegisterComponent
   ],
   imports: [
   FormsModule,

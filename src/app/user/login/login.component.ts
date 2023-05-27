@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
@@ -13,7 +13,11 @@ export class LoginComponent implements OnInit{
   username !: string;
   password !: string;
 
+  @Output() loginSuccess: EventEmitter<any> = new EventEmitter();
+
+
   public users !: User[];
+  public user !: User;
   constructor(private http: HttpService,
     private router: Router,
     private snackBar: MatSnackBar) { }
@@ -33,7 +37,8 @@ export class LoginComponent implements OnInit{
     const isCredentialsValid = this.chekcUser(this.username, this.password);
     if(isCredentialsValid){
       console.log('thành công');
-      this.router.navigate(['Component', 'list-pets'])
+      this.loginSuccess.emit();
+      this.router.navigate(['Component', 'list-pets']);
     }
     else{
       console.log('thất bại');
@@ -45,6 +50,7 @@ export class LoginComponent implements OnInit{
     for (let user of this.users) {
       if (user.username === username && user.password === password) {
         return true; // Tìm thấy username và password trong mảng
+        
       }
     }
     return false; // Không tìm thấy username và password trong mảng

@@ -1,4 +1,4 @@
-<app-login *ngIf="!isLoggedIn"></app-login>
+<app-login (loginSuccess)="handleLoginSuccess()" *ngIf="!isLoggedIn"></app-login>
 <div *ngIf="isLoggedIn">
 <mat-toolbar color="warn"  class="nav-height">
   <mat-toolbar-row>
@@ -27,15 +27,6 @@
       </mat-form-field>
     </span>
     <span class="menu-spacer" style="width: 75%"></span>
-    <div>
-      <a
-        mat-button
-        [routerLink]="['/user/login']"
-        [routerLinkActive]="'active-link'"
-      >
-        <mat-icon>login</mat-icon>Login
-      </a>
-    </div>
 
     <button matTooltip="More"
       mat-icon-button
@@ -53,7 +44,7 @@
         <mat-icon>voicemail</mat-icon>
         <span>Check voice mail</span>
       </button>
-      <button mat-menu-item>
+      <button (click)="handleLogout()" mat-menu-item>
         <mat-icon>logout</mat-icon>
         <span>LogOut</span>
       </button>
