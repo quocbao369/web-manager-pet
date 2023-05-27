@@ -1,0 +1,27 @@
+<div style="margin-left: 2cm;">     
+    <div>
+        <h1 style="font-weight: 500;">Pet list</h1>
+        <span style="font-weight: 300;">Home / Pet List</span>
+      </div>
+      
+      <div *ngIf="isLoading" class="loading-overlay">
+        <div class="spinner"></div>
+      </div>
+      
+      <app-pets *ngFor="let pet of getPetsForPage()" [pet]="pet"></app-pets>
+      
+      <div class="pagination">
+        <button matTooltip="Back" matTooltipPosition="left" mat-icon-button color="primary" (click)="goToPreviousPage()" [disabled]="currentPage === 1">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+      
+        <span class="current-page">Page {{ currentPage }} of {{totalPages}}</span>
+      
+        <button matTooltip="Next" matTooltipPosition="right" mat-icon-button color="primary" (click)="goToNextPage()" [disabled]="currentPage === totalPages">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+</div>
+
+
+

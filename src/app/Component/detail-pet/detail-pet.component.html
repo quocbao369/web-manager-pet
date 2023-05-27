@@ -1,0 +1,115 @@
+<div style="margin-left: 2cm;">
+  <div>
+    <h1 style="font-weight: 500">Pet detail</h1>
+    <span style="font-weight: 300">Home / Pet List / Detail</span>
+  </div>
+  <div *ngIf="isLoading" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+  <div>
+    <div class="container">
+        <mat-card class="example-card">
+          <div class="flex-container">
+            <div class="image-container">
+          <img mat-card-image src="{{ pet.img }}" alt="Pet Image" width="300px" />
+            </div>
+            
+
+          <mat-card-content class="detail-card-content">
+            <mat-card-title class="detail-card-title">{{pet.name}}</mat-card-title>
+            <mat-card-subtitle class="detail-card-subtitle">Type: {{ pet.type }}</mat-card-subtitle>
+            <p><strong>Breed:</strong> {{ pet.breed }}</p>
+            <p><strong>Age:</strong> {{ pet.age }}</p>
+            <p><strong>Gender:</strong> {{ pet.gender }}</p>
+            <p><strong>Color:</strong> {{ pet.color }}</p>
+            <p><strong>Size:</strong> {{ pet.size }}</p>
+            <p><strong>Health Status:</strong> {{ pet.healthStatus }}</p>
+            <p><strong>Feeding Habits:</strong> {{ pet.feedingHabits }}</p>
+            <p><strong>Exercise Habits:</strong> {{ pet.exerciseHabits }}</p>
+            <p><strong>Description:</strong> {{ pet.description }}</p>
+          </mat-card-content>
+          </div>
+        </mat-card>
+
+      <div class="edit-form">
+        <form class="form" (ngSubmit)="upDatePet(petUpdateForm)" #petUpdateForm="ngForm">
+          <mat-card>
+            <mat-card-header>
+              <h2>Basic Information</h2>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput [(ngModel)]="pet.name" name="name" required />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Type</mat-label>
+                <input matInput [(ngModel)]="pet.type" name="type" required />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Breed</mat-label>
+                <input matInput [(ngModel)]="pet.breed" name="breed" required />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Age</mat-label>
+                <input matInput [(ngModel)]="pet.age" name="age" required />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Gender</mat-label>
+                <mat-select [(ngModel)]="pet.gender" name="gender" required>
+                  <mat-option value="Male">Male</mat-option>
+                  <mat-option value="Female">Female</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Color</mat-label>
+                <input matInput [(ngModel)]="pet.color" name="color" required />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Size</mat-label>
+                <input matInput [(ngModel)]="pet.size" name="size" required />
+              </mat-form-field>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card>
+            <mat-card-header>
+              <h2>Additional Information</h2>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-form-field appearance="outline">
+                <mat-label>Health Status</mat-label>
+                <input matInput [(ngModel)]="pet.healthStatus" name="healthStatus" required />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Feeding Habits</mat-label>
+                <input matInput [(ngModel)]="pet.feedingHabits" name="feedingHabits" required />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Exercise Habits</mat-label>
+                <input matInput [(ngModel)]="pet.exerciseHabits" name="exerciseHabits" required />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput [(ngModel)]="pet.description" name="description" required></textarea>
+              </mat-form-field>
+              <div class="form-section">
+                <h2>Upload Image</h2>
+                <div class="pet-image">
+                  <label for="petImage">Pet Image</label>
+                  <input type="file" id="petImage" name="petImage" (change)="onFileSelected($event)" accept="image/*"
+                    required>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </form>
+        <button (click)="upDatePet(petUpdateForm)" type="submit" style="margin: 10px 50px" mat-raised-button
+          color="primary">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

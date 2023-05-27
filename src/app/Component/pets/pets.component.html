@@ -1,0 +1,16 @@
+<div class="container">
+  <mat-card class="example-card">
+    <div matTooltip="Click to more" routerLink="/Component/detail/{{ pet.id }}">
+      <mat-card-header>
+        <mat-card-title>{{ pet.breed }}</mat-card-title>
+        <mat-card-subtitle>Name: {{ pet.name }}</mat-card-subtitle>
+      </mat-card-header>
+      <img class="img" mat-card-image src="{{ pet.img }}" alt="Photo of a {{ pet.breed }}" />
+      <mat-card-content> </mat-card-content>
+    </div>
+    <mat-card-actions class="card-actions">
+      <a href="#"><mat-icon matTooltip="Favorite" class="favicon">favorite</mat-icon></a>
+      <a href="#"><mat-icon matTooltip="Bookmark" class="more">bookmark</mat-icon></a>
+    </mat-card-actions>
+  </mat-card>
+</div>

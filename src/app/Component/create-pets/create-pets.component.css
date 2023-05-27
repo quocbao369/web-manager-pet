@@ -1,0 +1,123 @@
+.container{
+    margin: 50px 40px;
+    display: inline-block;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .pet-name label,
+  .pet-type label,
+  .pet-breed label,
+  .pet-age label,
+  .pet-gender label,
+  .pet-color label,
+  .pet-size label,
+  .pet-health-status label,
+  .pet-feeding-habits label,
+  .pet-exercise-habits label,
+  .pet-description label,
+  .pet-image label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .pet-name input[type="text"],
+  .pet-type input[type="text"],
+  .pet-breed input[type="text"],
+  .pet-age input[type="number"],
+  .pet-gender select,
+  .pet-color input[type="text"],
+  .pet-size input[type="text"],
+  .pet-health-status input[type="text"],
+  .pet-feeding-habits input[type="text"],
+  .pet-exercise-habits input[type="text"],
+  .pet-description textarea,
+  .pet-image input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+/* CSS cho phần tử input checkbox */
+input[type="checkbox"] {
+  /* Tùy chỉnh kiểu dáng và kích thước */
+  width: 20px;
+  height: 20px;
+}
+
+/* CSS cho checkbox được chọn */
+input[type="checkbox"]:checked {
+  /* Tùy chỉnh kiểu dáng khi checkbox được chọn */
+  background-color: #007bff; /* Màu nền khi được chọn */
+  border-color: #007bff; /* Màu viền khi được chọn */
+}
+
+/* CSS cho checkbox khi được hover */
+input[type="checkbox"]:hover {
+  /* Tùy chỉnh kiểu dáng khi hover vào checkbox */
+  opacity: 0.8; /* Độ mờ khi hover */
+}
+
+  .mat-mdc-card{
+    margin: 0 100px 30px 40px;
+    width: 40%;
+    min-height: 400px;
+  }
+  .form-field{
+    margin: 0 10px;
+  }
+  .actions{
+    position: absolute;
+    right: 10%;
+  }
+  .form-group{
+    margin-top: 30px;
+  }
+/* css cho message */
+.message{
+  position: absolute;
+    right: 70px;
+    bottom: 40px;
+    background-color: grey;
+    z-index: 1;
+    padding: 10px 200px 10px 15px;
+    animation: slideIn 0.5s forwards; /* Áp dụng animation với thời gian 0.5s */
+}
+.message-error{
+  position: absolute;
+    right: 70px;
+    bottom: 40px;
+    background-color: red;
+    z-index: 1;
+    padding: 10px 200px 10px 15px;
+    animation: slideIn 0.5s forwards; /* Áp dụng animation với thời gian 0.5s */
+}
+.example-pizza-party {
+  color: #ffffff; /* Màu chữ */
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%); /* Di chuyển sang phải ngoài khung nhìn */
+  }
+  100% {
+    transform: translateX(0); /* Di chuyển về vị trí ban đầu */
+  }
+}
+.mat-mdc-button:not(:disabled) {
+  color: #fff;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+
+
