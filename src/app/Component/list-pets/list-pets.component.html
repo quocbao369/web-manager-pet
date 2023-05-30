@@ -1,27 +1,83 @@
-<div style="margin-left: 2cm;">     
-    <div>
-        <h1 style="font-weight: 500;">Pet list</h1>
-        <span style="font-weight: 300;">Home / Pet List</span>
-      </div>
+<div style="margin-left: 2cm;margin-right: 2cm;">
+  <table style="width: 100%; ">
+    <tr>
+      <td>
+        <div>
+          <h1 style="font-weight: 500;">Pet list</h1>
+          <span style="font-weight: 300;">Home / Pet List</span>
+        </div>
+      </td>
       
-      <div *ngIf="isLoading" class="loading-overlay">
-        <div class="spinner"></div>
-      </div>
-      
-      <app-pets *ngFor="let pet of getPetsForPage()" [pet]="pet"></app-pets>
-      
-      <div class="pagination">
-        <button matTooltip="Back" matTooltipPosition="left" mat-icon-button color="primary" (click)="goToPreviousPage()" [disabled]="currentPage === 1">
-          <mat-icon>keyboard_arrow_left</mat-icon>
-        </button>
-      
-        <span class="current-page">Page {{ currentPage }} of {{totalPages}}</span>
-      
-        <button matTooltip="Next" matTooltipPosition="right" mat-icon-button color="primary" (click)="goToNextPage()" [disabled]="currentPage === totalPages">
-          <mat-icon>keyboard_arrow_right</mat-icon>
-        </button>
-      </div>
+      <td style="text-align: right;">
+        <div class="search-container">
+          <mat-form-field style="width: 500px;height: 70px;">
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput placeholder="Search" [(ngModel)]="searchQuery" (input)="filterPets()" />
+          </mat-form-field>
+        </div>        
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td style="text-align: right;">
+        <div class="filter-container">
+          <mat-form-field style="height: 70px;">
+            <mat-label>Type:</mat-label>
+            <mat-select [(ngModel)]="selectedType" (selectionChange)="onTypeSelect(selectedType)">
+              <mat-option value="">All</mat-option>
+              <mat-option value="Dog">Dog</mat-option>
+              <mat-option value="Cat">Cat</mat-option>
+              <mat-option value="Mouse">Mouse</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field style="height: 70px;">
+            <mat-label>Size:</mat-label>
+            <mat-select [(ngModel)]="selectedSize" (selectionChange)="onSizeSelect(selectedSize)">
+              <mat-option value="">All</mat-option>
+              <mat-option value="Small">Small</mat-option>
+              <mat-option value="Medium">Medium</mat-option>
+              <mat-option value="Large">Large</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field style="height: 70px;">
+            <mat-label>Gender:</mat-label>
+            <mat-select [(ngModel)]="selectedGender" (selectionChange)="onGenderSelect(selectedGender)">
+              <mat-option value="">All</mat-option>
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+  </table>
+
+
+
+  <!-- list pet -->
+  <app-pets *ngFor="let pet of getPetsForPage()" [pet]="pet"></app-pets>
+  <!-- Page -->
+  <div class="pagination">
+    <button matTooltip="Back" matTooltipPosition="left" mat-icon-button color="primary" (click)="goToPreviousPage()"
+      [disabled]="currentPage === 1">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+
+    <span class="current-page">Page {{ currentPage }} of {{totalPages}}</span>
+
+    <button matTooltip="Next" matTooltipPosition="right" mat-icon-button color="primary" (click)="goToNextPage()"
+      [disabled]="currentPage === totalPages">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
 </div>
 
-
-
+<div *ngIf="isLoading" class="loading-overlay">
+  <div class="spinner"></div>
+</div>

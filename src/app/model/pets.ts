@@ -13,6 +13,7 @@ export class Pets {
         public  exerciseHabits: string,//thói quen vận động
         public  description:string,//mô tả
         public  img:string,
+        public favorite:boolean,
     ){}
 }
 // export interface Pets {

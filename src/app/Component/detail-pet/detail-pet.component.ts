@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { Pets } from 'src/app/model/pets';
 import { HttpService } from 'src/app/services/http.service';
@@ -11,7 +12,9 @@ import { HttpService } from 'src/app/services/http.service';
 export class DetailPetComponent {
   public pet!: Pets;
   isLoading: boolean = false;
-  constructor(private http:HttpService,private route: ActivatedRoute,){}
+  constructor(private http:HttpService,
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar){}
   ngOnInit() {
     this.getIF();
     this.isLoading = true;
@@ -34,11 +37,15 @@ export class DetailPetComponent {
     this.http.updatePet(created).subscribe(
       (response) => {
         console.log('Pet updated successfully:', response);
-        // Xử lý thành công, ví dụ: hiển thị thông báo hoặc làm mới dữ liệu
+        this.openSnackBar('Pet updated successfully');
+
+        // Xử lý thành công
       },
       (error) => {
         console.error('Error updating pet:', error);
-        // Xử lý lỗi, ví dụ: hiển thị thông báo lỗi
+        this.openSnackBar('Error updating pet');
+
+        // Xử lý lỗi
       }
     );
   }
@@ -50,5 +57,10 @@ export class DetailPetComponent {
       this.pet.img=base64String;     
     };
     reader.readAsDataURL(file);
-}
+  }
+  openSnackBar(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 5000,
+    });
+  }
 }

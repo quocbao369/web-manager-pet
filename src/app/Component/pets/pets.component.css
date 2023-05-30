@@ -6,7 +6,7 @@
     transform: translateY(-10px);
   }
   .container{
-    margin: 50px 40px;
+    margin: 40px 35px;
     display: inline-block;
   }
  .mat-icon{
@@ -29,6 +29,10 @@
  }
  .mat-mdc-card-header {
   height: 89px;
+}
+
+.favicon-red {
+  color: red; /* Màu đỏ */
 }
 
   

@@ -49,19 +49,21 @@ export class HttpService {
   }
   // ****************//
   //login user
-  // checkUser(username: string, password: string): Observable<any> {
-  //   const url = `${this.REST_API_SERVER}/user`;
-  //   return this.httpCilent.post(url, {
-  //     username: username,
-  //     password: password
-  //   }).pipe(map((resp: any) =>{
-  //     return resp;
-  //   }));
-  // }
+  addUser(user:any): Observable<any> {
+    const url = `${this.REST_API_SERVER}/user`;
+    return this.httpCilent.post(url,user);
+  }
   //kiểm tra người dùng
   public getCheckUser() : Observable<any>{
     const url = `${this.REST_API_SERVER}/user`;
     return this.httpCilent.get<any>(url, this.httpOptions);
+  }
+  updateToggleFavorite(pet: Pets): Observable<Pets> {
+    const url = `${this.REST_API_SERVER}/pets/`+pet.id;
+    return this.httpCilent.patch<Pets>(url,
+      {
+        favorite: !pet.favorite
+      });
   }
 }
 
