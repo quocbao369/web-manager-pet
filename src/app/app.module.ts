@@ -33,8 +33,8 @@ import { TablePetComponent } from './Component/table-pet/table-pet.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator'; // Thêm dòng này
 import {MatGridListModule} from '@angular/material/grid-list';
-import { LoginModule } from './login/login.module';
 import { RegisterComponent } from './user/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -50,7 +50,8 @@ import { RegisterComponent } from './user/register/register.component';
     RegisterComponent
   ],
   imports: [
-  FormsModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -72,7 +73,7 @@ import { RegisterComponent } from './user/register/register.component';
     MatTableModule,
     MatPaginatorModule,
     MatGridListModule,
-    LoginModule
+  
     
     
   ],

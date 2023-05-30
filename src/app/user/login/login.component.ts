@@ -13,9 +13,6 @@ export class LoginComponent implements OnInit{
   username !: string;
   password !: string;
 
-  @Output() loginSuccess: EventEmitter<any> = new EventEmitter();
-
-
   public users !: User[];
   public user !: User;
   constructor(private http: HttpService,
@@ -37,12 +34,11 @@ export class LoginComponent implements OnInit{
     const isCredentialsValid = this.chekcUser(this.username, this.password);
     if(isCredentialsValid){
       console.log('thành công');
-      this.loginSuccess.emit();
       this.router.navigate(['Component', 'list-pets']);
     }
     else{
       console.log('thất bại');
-      this.openSnackBar('Check your account again !!!');
+      this.openSnackBar("Account doesn't exist");
     }
   }
   //check tài khoản trùng

@@ -1,37 +1,40 @@
-<div style="margin-left: 2cm;">
+<div style="margin-left: 2cm;margin-right: 2cm;">
   <div>
-    <h1 style="font-weight: 500">Pet detail</h1>
+    <h1 style="font-weight: 500">Pet details</h1>
     <span style="font-weight: 300">Home / Pet List / Detail</span>
   </div>
   <div *ngIf="isLoading" class="loading-overlay">
     <div class="spinner"></div>
   </div>
   <div>
-    <div class="container">
-        <mat-card class="example-card">
-          <div class="flex-container">
-            <div class="image-container">
-          <img mat-card-image src="{{ pet.img }}" alt="Pet Image" width="300px" />
+    <table style="margin-top: 30px; width: 100%;">
+      <tr>
+        <td style="width: 30%;">
+          <mat-card class="example-card">
+            <div class="flex-container">
+              <div style="margin:20px">
+                <img mat-card-image src="{{ pet.img }}" alt="Pet Image" width="350px" />
+              </div>
+
+
+              <mat-card-content class="detail-card-content">
+                <mat-card-title class="detail-card-title">{{pet.name}}</mat-card-title>
+                <mat-card-subtitle class="detail-card-subtitle">Type: {{ pet.type }}</mat-card-subtitle>
+                <p><strong>Breed:</strong> {{ pet.breed }}</p>
+                <p><strong>Age:</strong> {{ pet.age }}</p>
+                <p><strong>Gender:</strong> {{ pet.gender }}</p>
+                <p><strong>Color:</strong> {{ pet.color }}</p>
+                <p><strong>Size:</strong> {{ pet.size }}</p>
+                <p><strong>Health Status:</strong> {{ pet.healthStatus }}</p>
+                <p><strong>Feeding Habits:</strong> {{ pet.feedingHabits }}</p>
+                <p><strong>Exercise Habits:</strong> {{ pet.exerciseHabits }}</p>
+                <p><strong>Description:</strong> {{ pet.description }}</p>
+              </mat-card-content>
             </div>
-            
-
-          <mat-card-content class="detail-card-content">
-            <mat-card-title class="detail-card-title">{{pet.name}}</mat-card-title>
-            <mat-card-subtitle class="detail-card-subtitle">Type: {{ pet.type }}</mat-card-subtitle>
-            <p><strong>Breed:</strong> {{ pet.breed }}</p>
-            <p><strong>Age:</strong> {{ pet.age }}</p>
-            <p><strong>Gender:</strong> {{ pet.gender }}</p>
-            <p><strong>Color:</strong> {{ pet.color }}</p>
-            <p><strong>Size:</strong> {{ pet.size }}</p>
-            <p><strong>Health Status:</strong> {{ pet.healthStatus }}</p>
-            <p><strong>Feeding Habits:</strong> {{ pet.feedingHabits }}</p>
-            <p><strong>Exercise Habits:</strong> {{ pet.exerciseHabits }}</p>
-            <p><strong>Description:</strong> {{ pet.description }}</p>
-          </mat-card-content>
-          </div>
-        </mat-card>
-
-      <div class="edit-form">
+          </mat-card>
+        </td>
+        <td style="vertical-align: top;">
+          <div class="edit-form">
         <form class="form" (ngSubmit)="upDatePet(petUpdateForm)" #petUpdateForm="ngForm">
           <mat-card>
             <mat-card-header>
@@ -44,7 +47,11 @@
               </mat-form-field>
               <mat-form-field appearance="outline">
                 <mat-label>Type</mat-label>
-                <input matInput [(ngModel)]="pet.type" name="type" required />
+                <mat-select [(ngModel)]="pet.type" name="type" required>
+                  <mat-option value="Dog">Dog</mat-option>
+                  <mat-option value="Cat">Cat</mat-option>
+                  <mat-option value="Mouse">Mouse</mat-option>
+                </mat-select>
               </mat-form-field>
               <mat-form-field appearance="outline">
                 <mat-label>Breed</mat-label>
@@ -68,7 +75,11 @@
               </mat-form-field>
               <mat-form-field appearance="outline">
                 <mat-label>Size</mat-label>
-                <input matInput [(ngModel)]="pet.size" name="size" required />
+                <mat-select name="petSize" required [(ngModel)]="pet.size">
+                  <mat-option value="Small">Small</mat-option>
+                  <mat-option value="Medium">Medium</mat-option>
+                  <mat-option value="Large">Large</mat-option>
+                </mat-select>
               </mat-form-field>
             </mat-card-content>
           </mat-card>
@@ -105,11 +116,13 @@
             </mat-card-content>
           </mat-card>
         </form>
-        <button (click)="upDatePet(petUpdateForm)" type="submit" style="margin: 10px 50px" mat-raised-button
+        <button (click)="upDatePet(petUpdateForm)" type="submit" style="position: absolute;right: 2.5cm;margin-top: 20px;" mat-raised-button
           color="primary">
           Save
         </button>
       </div>
-    </div>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>

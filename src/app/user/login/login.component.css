@@ -1,5 +1,5 @@
 .login-card {
-    max-width: 400px;
+    max-width: 700px;
     margin: 0 auto;
     margin-top: 100px;
     padding: 20px;
@@ -25,15 +25,7 @@
     display: flex;
     justify-content: center;
   }
-  
-  .login-button {
-    background-color: #ff6f00;
-    color: white;
-  }
-  
-  .login-button:hover {
-    background-color: #ff8124;
-  }
+
   
   .register-link {
     text-align: center;
