@@ -65,5 +65,18 @@ export class HttpService {
         favorite: !pet.favorite
       });
   }
+  // ****************//
+  addCart(cart:any):Observable<any>{
+    const url = `${this.REST_API_SERVER}/cart`;
+    return this.httpCilent.post(url,cart);
+  }
+  getCart():Observable<any>{
+    const url = `${this.REST_API_SERVER}/cart`;
+    return this.httpCilent.get<any>(url, this.httpOptions);
+  }
+  deleteCart(id:string):Observable<any> {
+    const url = `${this.REST_API_SERVER}/cart/${id}`;
+    return this.httpCilent.delete<any>(url, this.httpOptions);
+  }
 }
 

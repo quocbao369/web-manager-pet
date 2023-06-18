@@ -1,0 +1,9 @@
+<div *ngIf="header">
+<mat-toolbar style="padding: 50px;">
+    <span><a style="text-decoration: none;" [routerLink]="['/Component/list-pets2']"><img src="https://i.pinimg.com/736x/97/b2/eb/97b2eb17eb5fd8b6d412b18b8c6dbfce.jpg"width="70px"height="70px" style="border-radius: 50%;display: inline-block; align-items: center;">Shop Pet</a></span>
+    <span class="example-spacer"></span>
+    <button  matTooltip="Login with admin privileges" (click)="logout()" style="margin-left: 50px;" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>login</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>

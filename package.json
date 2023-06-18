@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@syncfusion/ej2-angular-layouts": "^21.2.3-ngcc",
     "@syncfusion/ej2-angular-navigations": "^21.2.5-ngcc",
+    "moment": "^2.29.4",
     "ngx-pagination": "^6.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

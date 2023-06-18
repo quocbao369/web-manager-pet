@@ -1,0 +1,42 @@
+<mat-icon class="arrow_back" style="margin: 20px 50px;" (click)="back()"><span class="material-symbols-outlined">
+        arrow_back
+    </span>
+</mat-icon>
+
+<mat-card class="example-card" style="display: flex;justify-content: center;align-items: center;">
+    <table style="margin: 30px;width: 50%;">
+        <tr>
+            <td style="width: 350px;">
+                <div style="margin:20px; float: left;">
+                    <img mat-card-image src="{{ pet.img }}" alt="Pet Image" width="350px" height="350px" />
+                </div>
+            </td>
+            <td>
+                <div>
+                    <mat-card-content class="detail-card-content">
+                        <mat-card-title class="detail-card-title">{{pet.name}}</mat-card-title>
+                        <mat-card-subtitle class="detail-card-subtitle">Type: {{ pet.type }}</mat-card-subtitle>
+                        <p><strong>Breed:</strong> {{ pet.breed }}</p>
+                        <p><strong>Age:</strong> {{ pet.age }}</p>
+                        <p><strong>Gender:</strong> {{ pet.gender }}</p>
+                        <p><strong>Color:</strong> {{ pet.color }}</p>
+                        <p><strong>Size:</strong> {{ pet.size }}</p>
+                        <p><strong>Health Status:</strong> {{ pet.healthStatus }}</p>
+                        <p><strong>Feeding Habits:</strong> {{ pet.feedingHabits }}</p>
+                        <p><strong>Exercise Habits:</strong> {{ pet.exerciseHabits }}</p>
+                        <p><strong>Description:</strong> {{ pet.description }}</p>
+                        <p><strong>Price:</strong> {{ pet.price }} VND</p>
+
+                    </mat-card-content>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button (click)="openModal()" mat-raised-button color="primary"><mat-icon>shopping_cart</mat-icon>Buy Now</button>
+            </td>
+        </tr>
+    </table>
+</mat-card>
+<app-cart *ngIf="showModal" (closeModalEvent)="closeModal()"></app-cart>

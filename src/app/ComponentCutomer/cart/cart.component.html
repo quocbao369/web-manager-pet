@@ -1,0 +1,33 @@
+<div class="modal">
+    <div class="modal-content">
+        <form (ngSubmit)="onSubmit()">
+            <table>
+                <tr>
+                    <td>Tên người nhận</td>
+                    <td><input style="border-radius: 5px;height: 30px;" matInput type="text" name="name" [(ngModel)]="customer.name" required></td>
+                </tr>
+                <tr>
+                    <td>Số điện thoại</td>
+                    <td><input style="border-radius: 5px;height: 30px;" matInput type="text" name="phone" [(ngModel)]="customer.phone" required></td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td><textarea style="border-radius: 5px;height: 30px;" matInput name="address" [(ngModel)]="customer.address" required></textarea></td>
+                </tr>
+                <tr>
+                    <td>Giá tiền</td>
+                    <td>{{pet.price}}   VND</td>
+                </tr>
+                <tr>
+                    <td>
+                        <button mat-raised-button color="warn" (click)="closeModal()">Close</button>
+                    </td>
+                    <td>
+                        <button mat-raised-button color="primary" type="submit">Buy</button>
+                    </td>
+                </tr>
+            </table>
+          </form>
+    </div>
+  </div>
+  

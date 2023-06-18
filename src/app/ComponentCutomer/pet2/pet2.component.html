@@ -1,0 +1,14 @@
+<div class="container">
+    <mat-card class="example-card">
+      <div matTooltip="Click to buy" routerLink="/Component/detail2/{{ pet.id }}">
+        <mat-card-header>
+          <mat-card-title>{{ pet.breed }}</mat-card-title>
+          <mat-card-subtitle>Type: {{ pet.type }}</mat-card-subtitle>
+        </mat-card-header>
+        <img class="img" mat-card-image src="{{ pet.img }}" alt="Photo of a {{ pet.breed }}" />
+        <mat-card-content>
+          <h3 style="text-align: end;">Price:{{pet.price}} VND</h3>
+        </mat-card-content>
+      </div>        
+    </mat-card>
+  </div>
