@@ -1,0 +1,7 @@
+.arrow_back :hover{
+    background-color: rgba(0, 0, 0, 0.116);
+    border-radius: 50%;
+}
+.arrow_back{
+    margin: 10px;
+}

@@ -3,28 +3,32 @@ import { MatSidenav} from '@angular/material/sidenav'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class AppComponent implements DoCheck {
+export class HeaderComponent implements DoCheck{
   title = 'DeTaiWeb';
   @ViewChild(MatSidenav)'sidenav':MatSidenav;
-  value = '';
   public isOpened = false;
   isLoggedIn: boolean = false;
-  isRegister: boolean = false;
-  isHome:boolean=false;
+  isrouter:boolean=false;
   constructor(private router:Router){}
 
   ngDoCheck() {
     const value = localStorage.getItem('setlogin');
-    console.log(value)
+    const value2 = localStorage.getItem('login');
+
     if(value=='admin'){
-      this.isHome=true;
+      this.isrouter=true;
+      this.isLoggedIn=false
     }else{
-      this.isHome=false; 
-      this.isLoggedIn = false;
+      this.isrouter=false;
+    }
+    if(value2=='true'){
+      this.isLoggedIn=false
+    }else{
+      this.isLoggedIn=true
 
     }
   }
@@ -39,13 +43,10 @@ export class AppComponent implements DoCheck {
     this.isOpened = false;
   }
 
-  public input(){
-    
-  }
 // hàm sử lý đăng ký tài khoản
   handleLogout() {
-    this.isLoggedIn = false;
-    localStorage.removeItem('isLoggedIn');
-    this.router.navigate(['login']);
+    localStorage.removeItem('setlogin');
+    localStorage.removeItem('login');
+    this.router.navigate(['Component','list-pets2']);
   }
 }

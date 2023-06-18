@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit{
 
   ngOnInit(): void {
     this.load();
+    localStorage.setItem('login', 'true');
   }
   //lấy dữ liệu từ api
   load(){
@@ -32,9 +33,12 @@ export class LoginComponent implements OnInit{
   //kiểm tra tài khoản có tồn tại không
   login(){
     const isCredentialsValid = this.chekcUser(this.username, this.password);
+    localStorage.setItem('setlogin', 'admin');
+    
     if(isCredentialsValid){
+      localStorage.removeItem('login');
       console.log('thành công');
-      this.router.navigate(['Component', 'list-pets']);
+      this.router.navigate(['Component', 'statistics']);
     }
     else{
       console.log('thất bại');

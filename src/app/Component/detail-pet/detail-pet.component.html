@@ -29,6 +29,8 @@
                 <p><strong>Feeding Habits:</strong> {{ pet.feedingHabits }}</p>
                 <p><strong>Exercise Habits:</strong> {{ pet.exerciseHabits }}</p>
                 <p><strong>Description:</strong> {{ pet.description }}</p>
+                <p><strong>Price:</strong> {{ pet.price }}</p>
+
               </mat-card-content>
             </div>
           </mat-card>
@@ -104,6 +106,10 @@
               <mat-form-field appearance="outline">
                 <mat-label>Description</mat-label>
                 <textarea matInput [(ngModel)]="pet.description" name="description" required></textarea>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Price</mat-label>
+                <input type="number" matInput [(ngModel)]="pet.price" name="price" required />
               </mat-form-field>
               <div class="form-section">
                 <h2>Upload Image</h2>

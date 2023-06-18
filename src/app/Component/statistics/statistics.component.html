@@ -1,0 +1,89 @@
+<div style="margin: 2cm;">
+    <div class="statistics-container">
+        <div class="statistic-card">
+          <mat-card>
+            <mat-card-header>
+              <div class="icon-container">
+                <mat-icon class="icon">monetization_on</mat-icon>
+              </div>
+              <mat-card-title class="card-title">Doanh thu</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="value">{{ revenue | currency:'VND':'symbol':'1.2-2' }}</div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      
+        <div class="statistic-card">
+          <mat-card>
+            <mat-card-header>
+              <div class="icon-container">
+                <mat-icon class="icon">shopping_cart</mat-icon>
+              </div>
+              <mat-card-title class="card-title">Số lượng đơn hàng</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="value">{{ soldOrders }}</div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <div>
+        <h2>Bảng thống kê đơn hàng</h2>
+      </div>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Tên khách hàng -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Tên khách hàng</th>
+          <td mat-cell *matCellDef="let customer" class="table-center">{{ customer.name }}</td>
+        </ng-container>
+      
+        <!-- Số điện thoại -->
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef>Số điện thoại</th>
+          <td mat-cell *matCellDef="let customer" class="table-center">{{ customer.phone }}</td>
+        </ng-container>
+      
+        <!-- Địa chỉ -->
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef>Địa chỉ</th>
+          <td mat-cell *matCellDef="let customer" class="table-center">{{ customer.address }}</td>
+        </ng-container>
+      
+        
+      
+        <!-- Giá tiền -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef>Giá tiền</th>
+          <td mat-cell *matCellDef="let customer" class="table-center">{{ customer.price }} VND</td>
+        </ng-container>
+    
+        <!-- Ngày mua hàng -->
+        <ng-container matColumnDef="namepet">
+            <th mat-header-cell *matHeaderCellDef>Tên của thú cưng được mua</th>
+            <td mat-cell *matCellDef="let customer" class="table-center">{{ customer.namepet }}</td>
+          </ng-container>
+    
+        <!-- Ngày mua hàng -->
+        <ng-container matColumnDef="timebuy">
+            <th mat-header-cell *matHeaderCellDef>Ngày mua hàng</th>
+            <td mat-cell *matCellDef="let customer" class="table-center">{{ customer.timebuy }}</td>
+          </ng-container>
+      
+        <!-- Icon xóa -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let customer">
+            <button mat-icon-button color="warn" (click)="onDelete(customer)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+      
+        <!-- Các cột -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" class="th-center"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      
+      
+</div>

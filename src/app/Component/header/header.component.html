@@ -1,0 +1,86 @@
+<div >
+<mat-toolbar *ngIf="isLoggedIn"  color="warn"  class="nav-height">
+    <mat-toolbar-row>
+      <span class="container">
+        <button mat-icon-button (click)="openLeftSide()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <h2><a  style="text-decoration: none;color: white;" [routerLink]="['/Component/list-pets']" href="">Pet management</a> </h2>
+      </span>
+      <span class="menu-spacer" style="width: 85%"></span>
+  
+      <button matTooltip="More"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button (click)="handleLogout()" mat-menu-item>
+          <mat-icon>logout</mat-icon>
+          <span>LogOut</span>
+        </button>
+      </mat-menu>
+  
+  
+  
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container >
+    <mat-sidenav #sidenav (closed)="closeLeftSide()">
+      <mat-nav-list style="width: 6cm;">
+        <a 
+          mat-list-item [routerLink]="['Component/statistics']">
+          <mat-icon style="color: #000000;" matListItemIcon>home</mat-icon>Home
+        </a>
+        <a 
+          mat-list-item [routerLink]="['Component/list-pets']">
+          <mat-icon style="color: #000000;" matListItemIcon>list</mat-icon>Pet List
+        </a>
+        <a
+          mat-list-item
+          [routerLink]="['Component/create-pets']"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon style="color: #000000;" matListItemIcon>add_circle</mat-icon>Add a new pet
+        </a>
+        <a
+          mat-list-item
+          [routerLink]="['Component/table-pets']"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon style="color: #000000;" matListItemIcon>table</mat-icon>Pet table
+        </a>
+  
+  
+        <a
+          mat-list-item
+          [routerLink]="['Component/favorite-pets']"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon style="color: #000000;" matListItemIcon>favorite</mat-icon>Favorite
+        </a>
+        <a mat-list-item (click)="sidenav.toggle()" mat-list-item>
+          <mat-icon style="color: red;" matListItemIcon>cancel</mat-icon> Close
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div
+        style="
+          height: 90vh;
+          margin-top: 20px;
+          margin-right: 10px;
+          margin-left: 10px;
+        "
+        [ngClass]="{
+          'content-move-left': !isOpened,
+          'content-move-right': isOpened
+        }"
+      >
+        <router-outlet *ngIf="isrouter"></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

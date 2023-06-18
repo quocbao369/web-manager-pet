@@ -1,0 +1,21 @@
+<div style="justify-content: center;display: flex; margin: 10px;">
+    <mat-form-field style="width: 500px;height: 70px;">
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput placeholder="Search" [(ngModel)]="searchQuery" (input)="filterPets()" />
+    </mat-form-field>
+  </div>   
+<app-pet2 style="margin-left: 130px;" *ngFor="let pet of getPetsForPage()" [pet]="pet"></app-pet2>
+
+<div class="pagination">
+    <button matTooltip="Back" matTooltipPosition="left" mat-icon-button color="primary" (click)="goToPreviousPage()"
+      [disabled]="currentPage === 1">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+
+    <span class="current-page">Page {{ currentPage }} of {{totalPages}}</span>
+
+    <button matTooltip="Next" matTooltipPosition="right" mat-icon-button color="primary" (click)="goToNextPage()"
+      [disabled]="currentPage === totalPages">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>

@@ -132,6 +132,14 @@
               </mat-error>
             </mat-form-field>
 
+            <mat-form-field class="form-field">
+              <mat-label>Price</mat-label>
+              <input matInput type="number" id="price" name="price" required [(ngModel)]="pet.price">
+              <mat-error *ngIf="createPetForm.controls['price'].invalid && createPetForm.controls['price'].touched">
+                Price is required
+              </mat-error>
+            </mat-form-field>
+
 
           </div>
           <div class="form-section">

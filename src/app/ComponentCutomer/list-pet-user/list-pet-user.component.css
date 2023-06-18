@@ -1,0 +1,13 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+    padding: 46px 0;
+  }
+  
+  .current-page {
+    margin: 0 10px;
+    font-weight: bold;
+  }
+  

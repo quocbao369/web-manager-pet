@@ -35,6 +35,16 @@ import { MatPaginatorModule } from '@angular/material/paginator'; // Thêm dòng
 import {MatGridListModule} from '@angular/material/grid-list';
 import { RegisterComponent } from './user/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './Component/header/header.component';
+import { HomeComponent } from './ComponentCutomer/home/home.component';
+import { HeaderCTComponent } from './ComponentCutomer/header-ct/header-ct.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { ListPetUserComponent } from './ComponentCutomer/list-pet-user/list-pet-user.component';
+import { HomeAdminComponent } from './Component/home-admin/home-admin.component';
+import { Pet2Component } from './ComponentCutomer/pet2/pet2.component';
+import { DetailsPet2Component } from './ComponentCutomer/details-pet2/details-pet2.component';
+import { CartComponent } from './ComponentCutomer/cart/cart.component';
+import { StatisticsComponent } from './Component/statistics/statistics.component';
 
 
 @NgModule({
@@ -47,7 +57,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     DetailPetComponent,
     TablePetComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent,
+    HomeComponent,
+    HeaderCTComponent,
+    ListPetUserComponent,
+    HomeAdminComponent,
+    Pet2Component,
+    DetailsPet2Component,
+    CartComponent,
+    StatisticsComponent
   ],
   imports: [
     FormsModule,
@@ -73,6 +92,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatTableModule,
     MatPaginatorModule,
     MatGridListModule,
+    MatTabsModule
   
     
     

@@ -16,7 +16,7 @@ export class CreatePetsComponent {
   selectedFile: File | null = null;
   constructor(private http: HttpService,
     private snackBar: MatSnackBar) {
-    this.pet = new Pets(0,'','','',1,'','','','','','','','',false);
+    this.pet = new Pets(0,'','','',1,'','','','','','','','',0,false);
   }
   onSubmit(createPetForm:any) {
     if(createPetForm.valid){
@@ -24,7 +24,7 @@ export class CreatePetsComponent {
         this.http.addPets(created).subscribe(
         (data)=>{
           console.log('PostPet',data);
-          this.pet = new Pets(0,'','','',1,'','','','','','','','',false);
+          this.pet = new Pets(0,'','','',1,'','','','','','','','',0,false);
           this.openSnackBar('Create success !!!');
           this.confirmed=false;
           }
