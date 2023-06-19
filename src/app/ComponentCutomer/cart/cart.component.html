@@ -12,18 +12,26 @@
                 </tr>
                 <tr>
                     <td>Địa chỉ</td>
-                    <td><textarea style="border-radius: 5px;height: 30px;" matInput name="address" [(ngModel)]="customer.address" required></textarea></td>
+                    <td><textarea style="border-radius: 5px;height: 3cm;padding: 10px;" matInput name="address" [(ngModel)]="customer.address" required></textarea></td>
                 </tr>
                 <tr>
                     <td>Giá tiền</td>
-                    <td>{{pet.price}}   VND</td>
+                    <td>{{pet.price|number}}   VND</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" 
+                        name="petConfirm" 
+                        [(ngModel)]="confirmed">
+                        <span>Xác nhận thanh toán đơn hàng</span>
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         <button mat-raised-button color="warn" (click)="closeModal()">Close</button>
                     </td>
                     <td>
-                        <button mat-raised-button color="primary" type="submit">Buy</button>
+                        <button [disabled]="!confirmed" mat-raised-button color="primary" type="submit">Buy</button>
                     </td>
                 </tr>
             </table>

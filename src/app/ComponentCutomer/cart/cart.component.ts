@@ -16,6 +16,9 @@ export class CartComponent implements OnInit {
   public customer!: Customer;
   public pet!: Pets;
   public date!: string;
+  confirmed: boolean = false;
+
+
   constructor(public http:HttpService,private snackBar: MatSnackBar,private route: ActivatedRoute,){
     this.date = moment().format('YYYY-MM-DD HH:mm:ss');
     this.customer= new Customer(0,'',0,'',0,'','');
