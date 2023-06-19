@@ -10,7 +10,6 @@
     </div>
     <mat-card-actions class="card-actions">
         <mat-icon [ngClass]="{'favicon': !pet.favorite, 'favicon-red': pet.favorite}" matTooltip="Favorite" (click)="toggleFavorite(pet)">{{ pet.favorite ? 'favorite' : 'favorite_border' }}</mat-icon>
-      <a href="#"><mat-icon matTooltip="Bookmark" class="more">bookmark</mat-icon></a>
     </mat-card-actions>
         
   </mat-card>
