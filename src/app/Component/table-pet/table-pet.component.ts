@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class TablePetComponent implements OnInit{
   public pet!: Pets[];
-  displayedColumns: string[] = ['name', 'type', 'breed', 'age', 'gender', 'color', 'size', 'healthStatus', 'feedingHabits', 'exerciseHabits', 'description','image', 'actions'];
+  displayedColumns: string[] = ['name', 'type', 'breed','price', 'age', 'gender', 'color', 'size', 'healthStatus', 'feedingHabits', 'exerciseHabits', 'description','image', 'actions'];
   dataSource!: MatTableDataSource<any>;
   isLoading: boolean = false;
 
