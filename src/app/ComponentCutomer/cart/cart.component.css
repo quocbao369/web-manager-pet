@@ -19,4 +19,23 @@
   td{
     padding: 10px;
   }
+  /* CSS cho phần tử input checkbox */
+input[type="checkbox"] {
+  /* Tùy chỉnh kiểu dáng và kích thước */
+  width: 20px;
+  height: 20px;
+}
+
+/* CSS cho checkbox được chọn */
+input[type="checkbox"]:checked {
+  /* Tùy chỉnh kiểu dáng khi checkbox được chọn */
+  background-color: #007bff; /* Màu nền khi được chọn */
+  border-color: #007bff; /* Màu viền khi được chọn */
+}
+
+/* CSS cho checkbox khi được hover */
+input[type="checkbox"]:hover {
+  /* Tùy chỉnh kiểu dáng khi hover vào checkbox */
+  opacity: 0.8; /* Độ mờ khi hover */
+}
   

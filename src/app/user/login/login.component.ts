@@ -61,4 +61,8 @@ export class LoginComponent implements OnInit{
       duration: 5000,
     });
   }
+  backHome() {
+    localStorage.removeItem('login');
+    this.router.navigate(['Component','list-pets2']);
+  }
 }

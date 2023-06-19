@@ -26,6 +26,7 @@ export class ListPetUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPet();
+    this.isLoading=true;
   }
   getPet() {
     this.http.getPets().subscribe(

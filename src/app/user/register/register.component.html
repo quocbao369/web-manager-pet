@@ -1,4 +1,6 @@
 <mat-card class="register-card">
+  <a matTooltip="Back to Login" matTooltipPosition="right" class="back" (click)="backtologin()"  color="primary"><mat-icon>arrow_back</mat-icon></a>
+
     <mat-card-header>
       <mat-card-title class="register-title">Register</mat-card-title>
     </mat-card-header>
@@ -22,7 +24,6 @@
           </mat-form-field>
         <div class="register-button-wrapper">
             <button mat-raised-button color="primary" type="submit">Register</button>
-            <button mat-raised-button color="accent" (click)="backtologin()">Back to login</button>
         </div>
       </form>
     </mat-card-content>

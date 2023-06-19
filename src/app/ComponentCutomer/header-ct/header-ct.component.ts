@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './header-ct.component.html',
   styleUrls: ['./header-ct.component.css']
 })
-export class HeaderCTComponent implements OnInit {
+export class HeaderCTComponent implements DoCheck {
   header:boolean=true
   constructor(private router:Router){}
 
-  ngOnInit(): void {
+  ngDoCheck(): void {
     const value = localStorage.getItem('login');
     if(value=='true'){
       this.header=false;

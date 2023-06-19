@@ -41,4 +41,12 @@
   .register-link a:hover {
     text-decoration: underline;
   }
-  
+  .back{
+    padding: 10px;
+    width: 15px;
+  }
+  .back :hover{
+    background-color: #33333361;
+    border-radius: 50%;
+    color: #f8f8f8;
+  }
