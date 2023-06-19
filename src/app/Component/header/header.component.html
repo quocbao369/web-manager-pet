@@ -35,7 +35,10 @@
           <mat-icon style="color: #000000;" matListItemIcon>home</mat-icon>Home
         </a>
         <a 
-          mat-list-item [routerLink]="['Component/list-pets']">
+          mat-list-item 
+          [routerLink]="['Component/list-pets']"
+          (click)="sidenav.toggle()"
+          >
           <mat-icon style="color: #000000;" matListItemIcon>list</mat-icon>Pet List
         </a>
         <a

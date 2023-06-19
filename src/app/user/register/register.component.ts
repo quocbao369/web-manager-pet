@@ -25,14 +25,12 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.load();
   }
-
   load() {
     this.http.getCheckUser().subscribe(
       (response) => {
         this.users = response;
       })
   }
-
   register(registerForm: any) {
     if (registerForm.valid) {
       const create = this.user;

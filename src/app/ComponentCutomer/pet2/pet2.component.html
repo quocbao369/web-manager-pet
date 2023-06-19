@@ -7,7 +7,7 @@
         </mat-card-header>
         <img class="img" mat-card-image src="{{ pet.img }}" alt="Photo of a {{ pet.breed }}" />
         <mat-card-content>
-          <h3 style="text-align: end;">Price:{{pet.price}} VND</h3>
+          <h3 style="text-align: center;font-weight: 700;padding: 15px;">Price: {{pet.price|number}} VND</h3>
         </mat-card-content>
       </div>        
     </mat-card>
