@@ -42,6 +42,7 @@ export class RegisterComponent implements OnInit {
         else {
           this.http.addUser(create).subscribe((data) => {
             console.log('oke', data);
+            this.backtologin();
             this.openSnackBar('Create success !!!');
             this.user = new User(0, '', '', '');
           })

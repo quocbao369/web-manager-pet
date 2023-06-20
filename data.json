@@ -132,6 +132,12 @@
       "username": "bao3",
       "password": "1",
       "email": "quocbao27012002@gmail.com"
+    },
+    {
+      "id": 4,
+      "username": "bao5",
+      "password": "1",
+      "email": "quocbao27012002@gmail.com"
     }
   ]
 }
